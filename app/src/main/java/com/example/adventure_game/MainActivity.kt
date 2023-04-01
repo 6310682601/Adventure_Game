@@ -1,5 +1,6 @@
 package com.example.adventure_game
 
+import Adventure_Game
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -22,6 +23,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.adventure_game.ui.GameViewModel
 import com.example.adventure_game.ui.theme.Adventure_GameTheme
 
 class MainActivity : ComponentActivity() {
@@ -34,69 +36,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Adventure_Game()
+                    Adventure_Game(gameViewModel = GameViewModel())
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Adventure_Game(modifier: Modifier = Modifier) {
-    Column(
-        Modifier
-            .fillMaxSize()
-            .padding(),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Box(
-            Modifier
-                .fillMaxWidth()
-                .background(color = Color(0xFF4A148C))
-        ) {
-            Text(
-                text = "Adventure Game",
-                fontSize = 20.sp,
-                color = Color.White,
-                modifier = Modifier.padding(12.dp)
-            )
-        }
-        Spacer(modifier = Modifier.height(100.dp))
-        Text(
-            text = "Story",
-            fontSize = 20.sp
-        )
-        Spacer(modifier = Modifier.height(400.dp))
-        Button(
-            onClick = { /*TODO*/ },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(10.dp)
-            ) {
-            Text(
-                text = "Choice 1",
-                fontSize = 20.sp
-            )
-        }
-
-        Button(
-            onClick = { /*TODO*/ },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(10.dp)
-        ) {
-            Text(
-                text = "Choice 2",
-                fontSize = 20.sp)
-        }
-        
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Adventure_GameTheme {
-        Adventure_Game()
     }
 }
