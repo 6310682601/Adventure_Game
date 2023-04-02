@@ -119,8 +119,8 @@ fun EndDialog(
     } else if (end == 2) {
         AlertDialog(
             onDismissRequest = {},
-            title = { Text(text = "Game Over") },
-            text = { Text(text = "เต่ามีกำลังใจในการวิ่ง จึงวิ่งชนะคุณ") },
+            title = { Text(text = "มิตรภาพ Ending") },
+            text = { Text(text = "เต่าเห็นว่าคุณนิสัยดีมาก เลยไม่ได้ท้าแข่งวิ่งกัน จึงทำให้ไม่เกิดชัยชนะ แต่เกิดเป็นมิตรภาพที่ดีแทน") },
             dismissButton = {
                 TextButton(onClick = {activity.finish()}) {
                     Text(text = "Exit")
